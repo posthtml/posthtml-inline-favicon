@@ -63,6 +63,8 @@ posthtml()
   .then(result => fs.writeFileSync('./after.html', result.html));
 ```
 
+## [Example](example)
+
 ## Contributing
 
 See the [PostHTML Guidelines](https://github.com/posthtml/posthtml/tree/master/docs).
