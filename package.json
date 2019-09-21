@@ -16,7 +16,7 @@
   },
   "dependencies": {
     "datauri": "^2.0.0",
-    "posthtml": "^0.11.4"
+    "posthtml": "^0.11.6"
   },
   "devDependencies": {
     "@commitlint/cli": "^8.2.0",
