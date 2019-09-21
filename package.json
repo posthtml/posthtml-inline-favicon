@@ -1,6 +1,6 @@
 {
   "name": "posthtml-inline-favicon",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "license": "MIT",
   "description": "PostHTML plugin to inline favicons",
   "author": "Eric Liu (https://github.com/metonym)",
