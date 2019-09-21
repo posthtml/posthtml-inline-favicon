@@ -1,9 +1,9 @@
 import Datauri from 'datauri';
 import path from 'path';
-import { ITree } from 'posthtml';
+import { PostHTML } from 'posthtml';
 
 function inlineFavicon(options: IOptions = { path: '' }) {
-  return function plugin(tree: ITree) {
+  return function plugin(tree: PostHTML.Node) {
     tree.match(
       { tag: 'link', attrs: { rel: 'shortcut icon', href: new RegExp(/\S+/) } },
       node => {

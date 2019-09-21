@@ -10,7 +10,7 @@ describe('posthtml-inline-favicon', () => {
           <link rel="shortcut icon" href="favicon.ico">
         </head>`
       )
-      .then((result: { html: string }) => {
+      .then(result => {
         expect(result.html).toMatchSnapshot();
       });
   });
