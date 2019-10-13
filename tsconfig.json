@@ -6,7 +6,6 @@
     "module": "commonjs",
     "moduleResolution": "node",
     "outDir": "lib",
-    "removeComments": true,
     "strict": true
   },
   "include": ["src"]
