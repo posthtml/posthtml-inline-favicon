@@ -1,5 +1,5 @@
 import posthtml from 'posthtml';
-import { inlineFavicon } from '../';
+import { inlineFavicon } from '../src';
 
 describe('posthtml-inline-favicon', () => {
   it('matches the snapshot', () => {
@@ -10,8 +10,8 @@ describe('posthtml-inline-favicon', () => {
           <link rel="shortcut icon" href="favicon.ico">
         </head>`
       )
-      .then(result => {
-        expect(result.html).toMatchSnapshot();
+      .then(({ html }) => {
+        expect(html).toMatchSnapshot();
       });
   });
 });
