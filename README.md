@@ -77,9 +77,9 @@ See the [PostHTML Guidelines](https://github.com/posthtml/posthtml/tree/master/d
 
 [npm]: https://img.shields.io/npm/v/posthtml-inline-favicon.svg?color=blue
 [npm-url]: https://npmjs.com/package/posthtml-inline-favicon
-[deps]: https://david-dm.org/metonym/posthtml-inline-favicon.svg
-[deps-url]: https://david-dm.org/metonym/posthtml-inline-favicon
-[build]: https://travis-ci.com/metonym/posthtml-inline-favicon.svg?branch=master
-[build-badge]: https://travis-ci.com/metonym/posthtml-inline-favicon
-[codecov]: https://codecov.io/gh/metonym/posthtml-inline-favicon
-[codecov-shield]: https://img.shields.io/codecov/c/github/metonym/posthtml-inline-favicon.svg
+[deps]: https://david-dm.org/posthtml/posthtml-inline-favicon.svg
+[deps-url]: https://david-dm.org/posthtml/posthtml-inline-favicon
+[build]: https://travis-ci.com/posthtml/posthtml-inline-favicon.svg?branch=master
+[build-badge]: https://travis-ci.com/posthtml/posthtml-inline-favicon
+[codecov]: https://codecov.io/gh/posthtml/posthtml-inline-favicon
+[codecov-shield]: https://img.shields.io/codecov/c/github/posthtml/posthtml-inline-favicon.svg
