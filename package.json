@@ -12,7 +12,7 @@
     "format": "bun --bun prettier --write ."
   },
   "dependencies": {
-    "datauri": "^2.0.0",
+    "datauri": "^4.1.0",
     "posthtml": "^0.12.0"
   },
   "devDependencies": {
