@@ -5,7 +5,7 @@ import { PostHTML } from 'posthtml';
 function inlineFavicon(options: IOptions = { path: '' }) {
   return function plugin(tree: PostHTML.Node) {
     tree.match(
-      { tag: 'link', attrs: { rel: 'shortcut icon', href: new RegExp(/\S+/) } },
+      { tag: 'link', attrs: { rel: new RegExp(/icon/), href: new RegExp(/\S+/) } },
       node => {
         const href = node.attrs!.href as string;
         const file = path.join(process.cwd(), options.path || '', href);
