@@ -1,23 +1,26 @@
-import Datauri from 'datauri';
-import path from 'path';
-import { PostHTML } from 'posthtml';
+import Datauri from "datauri";
+import path from "path";
+import { PostHTML } from "posthtml";
 
-function inlineFavicon(options: IOptions = { path: '' }) {
+function inlineFavicon(options: IOptions = { path: "" }) {
   return function plugin(tree: PostHTML.Node) {
     tree.match(
-      { tag: 'link', attrs: { rel: new RegExp(/icon/), href: new RegExp(/\S+/) } },
-      node => {
+      {
+        tag: "link",
+        attrs: { rel: new RegExp(/icon/), href: new RegExp(/\S+/) },
+      },
+      (node) => {
         const href = node.attrs!.href as string;
-        const file = path.join(process.cwd(), options.path || '', href);
+        const file = path.join(process.cwd(), options.path || "", href);
 
         const { base64 } = new Datauri(file);
 
-        node.attrs!.rel = 'icon';
-        node.attrs!.type = 'image/png';
+        node.attrs!.rel = "icon";
+        node.attrs!.type = "image/png";
         node.attrs!.href = `data:image/png;base64,${base64}`;
 
         return node;
-      }
+      },
     );
   };
 }

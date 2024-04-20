@@ -1,1 +1,1 @@
-declare module 'datauri';
+declare module "datauri";
