@@ -1,4 +1,4 @@
-import Datauri from "datauri";
+import Datauri from "datauri/sync";
 import path from "path";
 import { PostHTML } from "posthtml";
 
@@ -13,7 +13,7 @@ function inlineFavicon(options: IOptions = { path: "" }) {
         const href = node.attrs!.href as string;
         const file = path.join(process.cwd(), options.path || "", href);
 
-        const { base64 } = new Datauri(file);
+        const { base64 } = Datauri(file);
 
         node.attrs!.rel = "icon";
         node.attrs!.type = "image/png";
