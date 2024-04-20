@@ -1,4 +1,4 @@
-import Datauri from "datauri/sync";
+import fs from "node:fs";
 import path from "node:path";
 import { type Plugin } from "posthtml";
 
@@ -12,8 +12,8 @@ function inlineFavicon(options: IOptions = { path: "" }): Plugin<void> {
       (node) => {
         const href = node.attrs.href;
         const file = path.join(process.cwd(), options.path || "", href);
-
-        const { base64 } = Datauri(file);
+        const source = fs.readFileSync(file);
+        const base64 = Buffer.from(source).toString("base64");
 
         node.attrs.rel = "icon";
         node.attrs.type = "image/png";
