@@ -13,9 +13,9 @@ The default behavior (no plugin options) assumes that `index.html` is located in
 ```js
 // posthtml.config.js
 runPlugin({
-  html: fs.readFileSync('./index.html'),
+  html: fs.readFileSync("./index.html"),
   options: undefined,
-  output: './after.default.html'
+  output: "./after.default.html",
 });
 ```
 
@@ -26,9 +26,9 @@ The custom behavior uses the `index.html` in the `public` folder.
 ```js
 // posthtml.config.js
 runPlugin({
-  html: fs.readFileSync('./public/index.html'),
-  options: { path: 'public' },
-  output: './after.public.html'
+  html: fs.readFileSync("./public/index.html"),
+  options: { path: "public" },
+  output: "./after.public.html",
 });
 ```
 

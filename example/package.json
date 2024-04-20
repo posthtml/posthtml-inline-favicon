@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "private": true,
   "devDependencies": {
-    "posthtml": "^0.11.4",
-    "posthtml-inline-favicon": "^0.1.0"
+    "posthtml": "^0.16.6",
+    "posthtml-inline-favicon": "^0.1.3"
   }
 }

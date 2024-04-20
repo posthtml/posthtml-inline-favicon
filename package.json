@@ -7,54 +7,25 @@
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
   "scripts": {
-    "build": "tsc",
-    "lint": "tslint --fix -p . -c tslint.json",
-    "test": "jest --coverage",
-    "test:tdd": "jest --watch",
-    "prepublishOnly": "yarn build"
+    "test": "bun test",
+    "build": "bun --bun tsc",
+    "format": "bun --bun prettier --write ."
   },
   "dependencies": {
     "datauri": "^2.0.0",
     "posthtml": "^0.12.0"
   },
   "devDependencies": {
-    "@commitlint/cli": "^8.2.0",
-    "@commitlint/config-conventional": "^8.2.0",
-    "@types/jest": "^25.1.1",
-    "husky": "^4.2.1",
-    "jest": "^25.1.0",
-    "prettier": "^1.18.2",
-    "pretty-quick": "^2.0.0",
-    "ts-jest": "^25.2.1",
-    "tslint": "^6.0.0",
-    "tslint-config-prettier": "^1.18.0",
-    "typescript": "^3.6.3"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "yarn lint && pretty-quick --staged",
-      "pre-push": "yarn test",
-      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
-    }
-  },
-  "prettier": {
-    "tabWidth": 2,
-    "semi": true,
-    "singleQuote": true
-  },
-  "jest": {
-    "preset": "ts-jest"
-  },
-  "commitlint": {
-    "extends": [
-      "@commitlint/config-conventional"
-    ]
+    "@types/jest": "^29.5.12",
+    "prettier": "^3.2.5",
+    "typescript": "^5.4.5"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/metonym/posthtml-inline-favicon.git"
+    "url": "git+https://github.com/metonym/posthtml-inline-favicon.git"
   },
   "homepage": "https://github.com/metonym/posthtml-inline-favicon",
+  "bugs": "https://github.com/metonym/posthtml-inline-favicon/issues",
   "keywords": [
     "posthtml",
     "posthtml plugin",
@@ -64,6 +35,5 @@
   ],
   "files": [
     "lib"
-  ],
-  "bugs": "https://github.com/metonym/posthtml-inline-favicon/issues"
+  ]
 }
