@@ -2,16 +2,29 @@ import fs from "node:fs";
 import path from "node:path";
 import { type Plugin } from "posthtml";
 
-function inlineFavicon(options: IOptions = { path: "" }): Plugin<void> {
+type Options = {
+  /**
+   * The relative path to the folder containing the favicon.
+   * @example "public"
+   */
+  path?: string;
+};
+
+export function inlineFavicon(options?: Options): Plugin<void> {
+  const relativePath = options?.path ?? "";
+
   return function plugin(tree) {
     tree.match(
       {
         tag: "link",
-        attrs: { rel: new RegExp(/icon/), href: new RegExp(/\S+/) },
+        attrs: {
+          rel: new RegExp(/icon/),
+          href: new RegExp(/\S+/),
+        },
       },
       (node) => {
         const href = node.attrs.href;
-        const file = path.join(process.cwd(), options.path || "", href);
+        const file = path.join(process.cwd(), relativePath, href);
         const source = fs.readFileSync(file);
         const base64 = Buffer.from(source).toString("base64");
 
@@ -20,13 +33,7 @@ function inlineFavicon(options: IOptions = { path: "" }): Plugin<void> {
         node.attrs.href = `data:image/png;base64,${base64}`;
 
         return node;
-      },
+      }
     );
   };
 }
-
-interface IOptions {
-  path?: string;
-}
-
-export { inlineFavicon };
